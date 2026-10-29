@@ -863,7 +863,7 @@ void handleGetTraffic() {
   if (!ensureWebUiAuth()) {
     return;
   }
-  StaticJsonDocument<24576> doc;
+  DynamicJsonDocument doc(24576);
   JsonArray items = doc.createNestedArray("items");
   for (const auto& entry : trafficLog) {
     JsonObject item = items.createNestedObject();
